@@ -1,0 +1,6 @@
+<% header = link_to('All Posts', posts_path) + " &raquo #{@category.name}".html_save %>
+<%= render 'shared/content_title', title: header %>
+
+<% @category.posts.each do |post|%>
+	<%= render 'posts/posts', post: post%>
+<%end%>
