@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update]
 
   def show
-    
   end
 
 	def new
@@ -25,7 +24,6 @@ class UsersController < ApplicationController
 	end
 
   def edit
-    
   end
 
   def update
@@ -47,11 +45,11 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :time_zone)
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by(slug: params[:id])
   end
 
 end
