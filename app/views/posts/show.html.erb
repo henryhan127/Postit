@@ -6,7 +6,7 @@
 
 <p><%= render @post.categories %></p>
 
-<%= link_to "#{@post.title}", "@post.url", class: "lead" %>
+<%= link_to "#{@post.title}", @post.url, class: "lead" %>
 <hr/>
 
 <p><%= @post.description %></p>
